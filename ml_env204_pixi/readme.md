@@ -13,15 +13,18 @@ alternative
 cp /home/dokt/majewski/Public/ml-env-204.tar .
 ```
 
+```
+pixi global install pixi-unpack
+```
+
 unpack
-
 ```
-mkdir -p ml-env-206 && cd ml-env-206
-tar -xf /path/to/ml-env-206.tar
+pixi-unpack ml-env-204.tar
 ```
 
+
+test the environment
 ```
-source activate.sh
 python -c "import torch; print(torch.__version__); print(torch.cuda.is_available()); print(torch.version.cuda)"
 ```
 
