@@ -22,6 +22,9 @@ unpack
 pixi-unpack ml-env-204.tar
 ```
 
+```
+source activate.sh
+```
 
 test the environment
 ```
