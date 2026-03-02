@@ -33,6 +33,8 @@ python -c "import torch; print(torch.__version__); print(torch.cuda.is_available
 
 ## creating env (THIS IS NOT FOR STUDENTS!)
 
+Assumes pixi.toml is present in the directory where commands are run
+
 ```
 pixi install
 pixi lock
