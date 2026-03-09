@@ -13,6 +13,13 @@ alternative
 cp /home/dokt/majewski/Public/ml-env-204.tar .
 ```
 
+consider copying to /tmp 
+
+```
+mkdir /tmp/ml204env/
+cp /home/dokt/majewski/Public/ml-env-204.tar /tmp/ml204env/
+```
+
 ```
 pixi global install pixi-unpack
 ```
