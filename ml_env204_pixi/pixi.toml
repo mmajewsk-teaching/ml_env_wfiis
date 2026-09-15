@@ -2,19 +2,52 @@
 name = "ml-env-204"
 platforms = ["linux-64"]
 channels = [
-  "nvidia/label/cuda-11.8.0",
-  "nvidia",
   "conda-forge",
   "pytorch",
+  "nvidia/label/cuda-11.8.0",
+  "nvidia",
 ]
+channel-priority = "disabled"
 
 [dependencies]
 python = "3.12.*"
-
-# Force the CUDA runtime version line
-cuda = { version = "*", channel = "nvidia/label/cuda-11.8.0" }
-
-# Force torch stack from pytorch channel
-pytorch = { version = "*", channel = "pytorch" }
+numpy = "*"
+matplotlib = "*"
+pandas = ">=3.0.2,<4"
+jupyterlab = "*"
+jupytext = "*"
+scikit-learn = ">=1.8.0,<2"
+transformers = "*"
+nltk = "*"
+langchain = "*"
+langchain-community = "*"
+langchain-ollama = "*"
+langgraph = "*"
 torchvision = { version = "*", channel = "pytorch" }
+pillow = "*"
+tqdm = "*"
+fastapi = ">=0.136.0,<0.137"
+uvicorn = "*"
+sqlalchemy = ">=2.0"
+pydantic = "*"
+requests = "*"
+httpx = "*"
+loguru = "*"
+
+[pypi-dependencies]
+sqlite-vec = "*"
+
+[feature.cuda.dependencies]
+cuda = { version = "*", channel = "nvidia/label/cuda-11.8.0" }
+gxx = "11.*"
+gcc = "11.*"
+pytorch = { version = "*", channel = "pytorch" }
 pytorch-cuda = { version = "11.8.*", channel = "pytorch" }
+
+[feature.cpu.dependencies]
+pytorch = { version = "*", channel = "pytorch" }
+cpuonly = { version = "*", channel = "pytorch" }
+
+[environments]
+default = { features = ["cuda"] }
+cpu = { features = ["cpu"] }
